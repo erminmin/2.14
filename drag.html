@@ -22,7 +22,7 @@
 </body>
 <script>
 	 class Drag(obj){
-  	    this.obj=obj;
+  	        this.obj=obj;
 		this.cw=document.documentElement.clientWidth;
 		this.ch=document.documentElement.clientHeight;
 		this.ow=this.obj.offsetWidth;
@@ -33,11 +33,11 @@
 		this.cy=0;
 		this.obj.left=0;
 		this.obj.top=0;
-        constructor(){
+               constructor(){
         	drag(){
              	this.down();
-            }
-     	    down(){
+              }
+     	       down(){
      	    	var that=this;
 	            this.obj.onmousedown=function(e){
 	            var ev=e||window.event
@@ -45,11 +45,11 @@
 	     		 that.oy=ev.offsetY
 	     		 that.move()
 	     		 that.up()
+     	          }
      	        }
-     	    }
      		
             
-     	    move(){
+     	       move(){
 	     		var that=this
 	     		document.onmousemove=function(e){
 	               var eve=e||window.event
@@ -74,18 +74,18 @@
 
 
 	     		}
-     	    }
+     	           }
      		
-     	    up(){
+     	           up(){
 	     		document.onmouseup=function(){
 	     			document.onmousemove=null;
 	     			document.onmouseup=null;
-	     	   }
-     	    }
+	     	         }
+     	           }
 	          
 
+           }
         }
-    }
     var obj=$(".box");
     console.log(new Drag(obj).drag());
 </script>
